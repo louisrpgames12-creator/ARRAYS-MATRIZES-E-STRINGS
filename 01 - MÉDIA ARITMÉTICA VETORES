@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()  {
+    int i;
+    float array[4] = {0}, acumulador = 0;
+    
+    for(i = 0; i < 4; i++) {
+        
+        printf("\nME INFORME A NOTA %d: ", i + 1);
+        scanf("%f", &array[i]);
+        
+        acumulador += array[i];
+        
+    }
+    
+    for(i = 0; i < 4; i++) {
+        
+        printf("A NOTA %d e: %.2f\n", i + 1, array[i]);
+        
+    }
+    
+    printf("a media aritmetica e: %.2f", acumulador/(float)4);
+    
+
+    return 0;
+}
