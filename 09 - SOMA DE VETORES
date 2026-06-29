@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()  {
+    int array1[8] = {0}, array2[8] = {0}, array3[8] = {0}, i, tamanho = 10;
+    
+    for(i = 0; i < 8; i++) {
+        
+        printf("ME INFORME UM NUMERO DO VETOR 1 E OUTRO PRO 2: ");
+        scanf("%d%d", &array1[i], &array2[i]);
+        
+        
+        array3[i] = array1[i] + array2[i];
+    }
+    
+    for(i = 0; i < 8; i++) {
+        
+        printf("\n%d", array3[i]);
+        
+    }
+    
+
+    return 0;
+}
