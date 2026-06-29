@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()  {
+    int array[15] = {0}, i, numero;
+    
+    for(i = 0; i < 15; i++) {
+        
+        printf("ME INFORME UM NUMERO: ");
+        scanf("%d", &array[i]);
+        
+    }
+    
+    printf("FALE UM NUMERO QUE VOCE DESEJA ENCONTRAR: ");
+    scanf("%d", &numero);
+    
+    for(i = 0; i < 15; i++) {
+        
+        if(numero == array[i])
+            printf("ENCONTRADO NA POSICAO: %d", i + 1);
+        
+    }
+
+    return 0;
+}
