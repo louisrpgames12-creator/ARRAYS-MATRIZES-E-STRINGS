@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int encontrararray(int array[], int tamanho) {
+    
+    int numero, i, posicao = -1;
+    
+    printf("FALE UM NUMERO QUE VOCE DESEJA ENCONTRAR: ");
+    scanf("%d", &numero);
+    
+    for(i = 0; i < tamanho; i++) {
+        
+        if(numero == array[i])
+            posicao = i + 1;
+        
+    }
+    
+    return posicao;
+    
+}
+
+int main()  {
+    int array[10] = {0}, i, tamanho = 10;
+    
+    for(i = 0; i < 10; i++) {
+        
+        printf("ME INFORME UM NUMERO: ");
+        scanf("%d", &array[i]);
+        
+    }
+    
+    printf("%d", encontrararray(array, tamanho));
+    
+    return 0;
+}
