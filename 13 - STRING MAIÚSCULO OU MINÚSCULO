@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main()  {
+    char nome[50];
+    int opcao, i;
+    
+    printf("ME INFORME UM NOME: ");
+    fgets(nome, 50, stdin);
+    
+    do{
+    printf("ME INDIQUE QUAL OPCAO VOCE QUER: \n1 - MAIUSCULA\n2 - MINUSCULA");
+    scanf("%d", &opcao);
+    }while(opcao != 1 && opcao != 2);
+    
+    switch (opcao) {
+        case 1:
+            for(i = 0; nome[i] != '\0'; i++) {
+            printf("%c", toupper(nome[i]));
+            }
+            break;
+        case 2:
+            for(i = 0; nome[i] != '\0'; i++) {
+            printf("%c", tolower(nome[i]));
+            }
+            break;
+    }
+    return 0;
+}
