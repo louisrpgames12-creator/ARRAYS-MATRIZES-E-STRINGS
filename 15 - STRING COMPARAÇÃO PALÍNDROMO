@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()  {
+    char palavra[30], contador = 0, i, j, certos = 0;;
+    
+    printf("ME INFORME UMA PALAVRA: ");
+    fgets(palavra, 30, stdin);
+    
+    for(i = 0; palavra[i] != '\n'; i++) {
+        contador++;
+    }
+    
+    j = (contador - 1);
+    
+    for(i = 0; i < contador ; i++) {
+        if(palavra[i] == palavra[j])
+            certos++;
+        j--;
+    }
+    
+    if(certos == contador)
+        printf("PALINDROMO");
+    else
+        printf("NAO PALINDROMO");
+    return 0;
+}
