@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()  {
+    int contador = 0, i;
+    char palavra[30];
+    
+    printf("ME DIGA UMA PALAVRA: ");
+    fgets(palavra, 30, stdin);
+    
+    for(i = 0; palavra[i] != '\0'; i++) {
+        if(palavra[i] == 'a' || palavra[i] == 'A')
+            contador++;
+        if(palavra[i] == 'e' || palavra[i] == 'E')
+            contador++;
+        if(palavra[i] == 'i' || palavra[i] == 'I')
+            contador++;
+        if(palavra[i] == 'o' || palavra[i] == 'O')
+            contador++;
+        if(palavra[i] == 'u' || palavra[i] == 'U')
+            contador++;
+        
+    }
+    
+    printf("%d", contador);
+    return 0;
+}
