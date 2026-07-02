@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()  {
+    int i, j, matriz[3][4] = {0}, maior = 0, linha, coluna;
+    
+    for(i = 0; i < 3; i++) {
+        for(j = 0; j < 4; j++) {
+            printf("ME INFORME O NUMERO DA LINHA %d COLUNA %d: ", i + 1, j + 1);
+            scanf("%d", &matriz[i][j]);
+            if(matriz[i][j] >= maior) {
+                maior = matriz[i][j];
+                linha = i;
+                coluna = j;
+            }
+        }
+    }
+    
+    for(i = 0; i < 3; i++) {
+        for(j = 0; j < 4; j++) {
+            printf("%d\t", matriz[i][j]);
+        }
+        printf("\n");
+    }
+    
+    printf("O MAIOR E: %d \nNA LINHA %d COLUNA %d", maior, linha, coluna);
+    
+    return 0;
+}
