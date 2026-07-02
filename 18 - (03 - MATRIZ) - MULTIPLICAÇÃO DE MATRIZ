@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()  {
+    float matriz[4][3] = {0}, soma = 0, escalar;
+    int i, j;
+    
+    printf("ME INFORME UM NUMERO QUE VOCE QUER MULTIPLICAR A MATRIZ: ");
+    scanf("%f", &escalar);
+    
+    for(i = 0; i < 4; i++) {
+        for(j = 0; j < 3; j++) {
+            printf("ME INFORME O NUMERO DA LINHA %d COLUNA %d: ", i + 1, j + 1);
+            scanf("%f", &matriz[i][j]);
+            matriz[i][j] *= escalar;
+        }
+    }
+    
+    for(i = 0; i < 4; i++) {
+        for(j = 0; j < 3; j++) {
+            printf("%.2f\t", matriz[i][j]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
