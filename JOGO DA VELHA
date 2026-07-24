@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+int main() {
+    char jogo_da_velha[3][3] = {0}, teste[3][3] = {0};
+    char jogador[2] = {'X','O'};
+    char jogar_novamente;
+    int linha, coluna, i = 0, decisao_jogador = 0, jogadas = 0, linhafor, colunafor;
+    do{
+        jogadas = 0;
+        for(linhafor = 0; linhafor < 3; linhafor++) {
+           for(colunafor = 0; colunafor < 3; colunafor++) {
+               jogo_da_velha[linhafor][colunafor] = 0;
+           } 
+        }
+            
+        while( jogadas < 9) {
+            printf("----------------------\n");
+            printf("|  %c   |  %c   |  %c   |\n", jogo_da_velha[0][0], jogo_da_velha[0][1], jogo_da_velha[0][2]);
+            printf("----------------------\n");
+            printf("|  %c   |  %c   |  %c   |\n", jogo_da_velha[1][0], jogo_da_velha[1][1], jogo_da_velha[1][2]);
+            printf("----------------------\n");
+            printf("|  %c   |  %c   |  %c   |\n", jogo_da_velha[2][0], jogo_da_velha[2][1], jogo_da_velha[2][2]);
+            printf("----------------------\n");
+            printf("\n");
+            do{
+                printf("JOGADOR %d ME INFORME A POSICAO QUE VOCE QUER JOGAR, LINHA E COLUNA: ", decisao_jogador);
+                scanf("%d%d", &linha,&coluna);
+            }while((linha > 2 || coluna > 2) || (jogo_da_velha[linha][coluna] == 'X' || jogo_da_velha[linha][coluna] == 'O'));
+            jogo_da_velha[linha][coluna] = jogador[decisao_jogador];
+            
+            if((jogo_da_velha[0][0] == 'X' && jogo_da_velha[0][1] == 'X' && jogo_da_velha[0][2] == 'X') || (jogo_da_velha[1][0] == 'X' && jogo_da_velha[1][1] == 'X' && jogo_da_velha[1][2] == 'X') || (jogo_da_velha[2][0] == 'X' && jogo_da_velha[2][1] == 'X' && jogo_da_velha[2][2] == 'X') || (jogo_da_velha[0][0] == 'O' && jogo_da_velha[0][1] == 'O' && jogo_da_velha[0][2] == 'O') || (jogo_da_velha[1][0] == 'O' && jogo_da_velha[1][1] == 'O' && jogo_da_velha[1][2] == 'O') || (jogo_da_velha[2][0] == 'O' && jogo_da_velha[2][1] == 'O' && jogo_da_velha[2][2] == 'O')) {
+            printf("\nJOGADOR %d GANHOU\n", decisao_jogador);
+            break;
+            }
+            
+            if((jogo_da_velha[0][0] == 'X' && jogo_da_velha[1][0] == 'X' && jogo_da_velha[2][0] == 'X') || (jogo_da_velha[0][1] == 'X' && jogo_da_velha[1][1] == 'X' && jogo_da_velha[2][1] == 'X') || (jogo_da_velha[0][2] == 'X' && jogo_da_velha[1][2] == 'X' && jogo_da_velha[2][2] == 'X') || (jogo_da_velha[0][0] == 'O' && jogo_da_velha[1][0] == 'O' && jogo_da_velha[2][0] == 'O') || (jogo_da_velha[0][1] == 'O' && jogo_da_velha[1][1] == 'O' && jogo_da_velha[2][1] == 'O') || (jogo_da_velha[0][2] == 'O' && jogo_da_velha[1][2] == 'O' && jogo_da_velha[2][2] == 'O')) {
+            printf("\nJOGADOR %d GANHOU\n", decisao_jogador);
+            break;
+            }
+            
+            if((jogo_da_velha[0][0] == 'X' && jogo_da_velha[1][1] == 'X' && jogo_da_velha[2][2] == 'X') || (jogo_da_velha[0][0] == 'O' && jogo_da_velha[1][1] == 'O' && jogo_da_velha[2][2] == 'O')) {
+            printf("\nJOGADOR %d GANHOU\n", decisao_jogador);
+            break;
+            }
+            
+            if((jogo_da_velha[2][0] == 'X' && jogo_da_velha[1][1] == 'X' && jogo_da_velha[0][2] == 'X') || (jogo_da_velha[2][0] == 'O' && jogo_da_velha[1][1] == 'O' && jogo_da_velha[0][2] == 'O')) {
+            printf("\nJOGADOR %d GANHOU\n", decisao_jogador);
+            break;
+            }
+          jogadas++;
+          i++;
+        decisao_jogador = i % 2;
+        }
+        do{
+        printf("Voce quer jogar novamente: [S] ou [N]");
+        scanf(" %c", &jogar_novamente);
+        }while(jogar_novamente != 'S' && jogar_novamente != 'N' && jogar_novamente != 's' && jogar_novamente != 'n');
+    }while(jogar_novamente == 'S' || jogar_novamente == 's');
+    
+    return 0;
+}
